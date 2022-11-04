@@ -14,13 +14,14 @@ let currentImgIndex = 0;
 const sliderContainerEl = document.querySelector( ".slider-container" );
 console.log( sliderContainerEl)
 //prendo i button da html
-const btnNext = document.querySelector( ".next" );
+const btnNext = document.getElementById( ".next" );
 const btnPrev = document.querySelector( ".prev" );
 
 console.log( btnNext, btnPrev);
 
 //aggiungo dentro al slider-container un tag img con indice 0
 sliderContainerEl.innerHTML += `<img src="${images[0]}" class="slider-img">`;
+
     
 //prendo il tag img figlio di slider-container
 const sliderImgEl = document.querySelector( `.slider-container :nth-child(${ currentImgIndex + 1 })` );
@@ -28,7 +29,7 @@ const sliderImgEl = document.querySelector( `.slider-container :nth-child(${ cur
 console.log(sliderImgEl)
 
 
-btnNext.addEventListener( "click", function (){
+btnNext.addEventListener("click", function() {
     console.log("hai cliccato il btn next");
 
     //incremento il contatore dell' valore images
