@@ -1,0 +1,30 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.slider-container{
+    width: 700px;
+    margin: auto;
+
+    
+}
+
+.slider-img{
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: contain;
+}
+
+.active-image{
+    display: block;
+} 
+
+.prev{
+    top: 3rem;
+    right: 331px;
+}
+
+.next{
+    bottom: 3rem;
+    right: 331px;
+}
