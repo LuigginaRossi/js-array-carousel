@@ -4,15 +4,14 @@ body{
 
 .slider-container{
     width: 700px;
-    margin: auto;
-
-    
+    margin: auto; 
 }
 
 .slider-img{
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: contain;
+    
 }
 
 .active-image{
