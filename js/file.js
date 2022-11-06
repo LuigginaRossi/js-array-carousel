@@ -34,12 +34,12 @@ const sliderImgEl = document.querySelector( `.slider container :nth-child( ${cur
 console.log(sliderImgEl)
 console.log(currentImgIndex)
 
-for ( let i = 0; i < images.length; i++ ) {
-    //se i=== 0 allora aggiungi la porprietà display block
-    if ( i === 0 ) {
-        sliderImgEl.classList.add( "d-block" );
-      }
-}
+// for ( let i = 0; i < images.length; i++ ) {
+//     //se i=== 0 allora aggiungi la porprietà display block
+//     if ( i === 0 ) {
+//       sliderImgEl.style("d-block");
+//       }
+// }
 
 btnNext.addEventListener("click", function() {
     console.log("hai cliccato il btn next");
@@ -48,4 +48,13 @@ btnNext.addEventListener("click", function() {
         currentImgIndex++;
         console.log(currentImgIndex);
     
+});
+
+btnNext.addEventListener("click", function() {
+  console.log("hai cliccato il btn prev");
+
+    //incremento il contatore dell' valore images
+      currentImgIndex--;
+      console.log(currentImgIndex);
+  
 });
