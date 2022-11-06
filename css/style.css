@@ -2,7 +2,7 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-.slider-container{
+.box,.slider-container{
     width: 700px;
     margin: auto; 
 }
@@ -11,7 +11,7 @@ body{
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: contain;
-    
+    display: none;;
 }
 
 .active-image{
