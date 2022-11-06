@@ -7,27 +7,31 @@ const images = [
     "imgs/05.webp"
 ];
 console.log(images);
-//indice attuale è 0
-let currentImgIndex = 0;
 
 //prendo slide-containet da html
-const sliderContainerEl = document.querySelector( ".slider-container" );
-console.log( sliderContainerEl)
+const sliderContainerEl = document.querySelector(".slider-container");
+console.log(sliderContainerEl)
 //prendo i button da html
-const btnNext = document.getElementById( ".next" );
-const btnPrev = document.querySelector( ".prev" );
+const btnNext = document.querySelector(".next");
+const btnPrev = document.querySelector(".prev");
 
 console.log( btnNext, btnPrev);
 
 //aggiungo dentro al slider-container un tag img con indice 0
 sliderContainerEl.innerHTML += `<img src="${images[0]}" class="slider-img">`;
+console.log(sliderContainerEl)
 
-    
+//indice attuale è 0
+let currentImgIndex = 0;
+console.log(currentImgIndex)
+
 //prendo il tag img figlio di slider-container
-const sliderImgEl = document.querySelector( `.slider-container :nth-child(${ currentImgIndex + 1 })` );
+const sliderImgEl = document.querySelector( `.slider-container > img(${ currentImgIndex + 1 })` );
 
 console.log(sliderImgEl)
 
+
+//sliderImgEl.src = images[ currentImgIndex ];
 
 btnNext.addEventListener("click", function() {
     console.log("hai cliccato il btn next");
@@ -43,7 +47,7 @@ btnNext.addEventListener("click", function() {
 // for (let i = 0; i < images.lenght; i++ ) {
 //     //prendo il tag img figlio di slider-container
 //     const sliderImgEl = document.querySelector( ".slider-container :nth-child(${ currenImgIndex + 1})" );
-
+        //
 //     if (i === 0) {
 //         active = "active"
 //         sliderImgEl.classList.add("active")
