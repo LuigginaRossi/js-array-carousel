@@ -17,7 +17,6 @@ let currentImgIndex = 0;
 console.log(currentImgIndex)
 
 
-
 for (let i = 0;  i < images.length; i++) {  
     //aggiungo dentro al slider-container un tag img con indice 0
     sliderContainerEl.innerHTML += `<img src="${images[i]}" class="slider-img">`;
