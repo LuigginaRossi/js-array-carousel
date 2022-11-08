@@ -22,22 +22,15 @@ for (let i = 0;  i < images.length; i++) {
     sliderContainerEl.innerHTML += `<img src="${images[i]}" class="slider-img">`;
    
     console.log(sliderContainerEl)
-    currentImgIndex++; 
+    // // currentImgIndex++; 
 
+    const sliderImgEl = document.querySelector( `.slider-container :nth-child( ${currentImgIndex + 1} )` );
+    console.log(sliderImgEl)
 
     if ( i === 0 ) {
-      const sliderImgEl = document.querySelector( `.slider-container :nth-child( ${currentImgIndex } )` );
-      console.log(sliderImgEl)
-
-      sliderImgEl.className += (" d-block");
-
+      sliderImgEl.classList.add("d-block");
     }
 
-    if ( i === currentImgIndex ) {
-      sliderImgEl.className += ("d-block");
-    } else{
-      sliderImgEl.className = ("d-none");
-    }
 
 }
 
@@ -52,24 +45,34 @@ const btnNext = document.querySelector(".next");
 const btnPrev = document.querySelector(".prev");
 console.log( btnNext, btnPrev);
 
-const sliderImgEl = document.querySelector( `.slider-container :nth-child( ${currentImgIndex } )` );
-console.log(sliderImgEl)
-
 btnNext.addEventListener("click", function() {
     console.log("hai cliccato il btn next");
 
+    // c'è un'immagine che ha la classe d-block
+    // da quell'immagine togli la classe
+    const oldImage = document.querySelector( `.slider-container :nth-child( ${currentImgIndex + 1 } )` );
+    console.log('old image', oldImage);
+
+    oldImage.classList.remove("d-block");
+
+    // incrementi o decrementi la variabile currentImgIndex
+
+    // verificare che il nuovo currentImgIndex non sia oltre i limiti
+    // se lo è o lo mettiamo a zero (se il bottone è next), altirmenti il contrario
+
+    // e quella dopo la mostri dandole d-block
+
       //incremento il contatore dell' valore images
         currentImgIndex++;
+
+        if ( currentImgIndex > (images.length - 1)){
+          currentImgIndex = 0 ;
+        }        
       
        //aggiorno scr dell'immagine perndendo l'indice dall'currentimgIndex
-       sliderImgEl.scr= images[currentImgIndex];
+       const newImage = document.querySelector( `.slider-container :nth-child( ${currentImgIndex + 1} )` );
+       newImage.classList.add("d-block");
        
-
-        if ( currentImgIndex > 5){
-          currentImgIndex = 0 ;
-        }
-        
-
       console.log(currentImgIndex);
 });
 
